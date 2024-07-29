@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="">
+
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" placeholder="Ana Maria da Silva">
+    
+        <label for="br">BR:</label>
+        <input type="number" name="br" id="br" placeholder="055500123">
+    
+        <label for="tipo-presente">Tipo de presente:</label>
+        <select name="tipo-presente" id="tipo-presente">
+            <option value="geral">Geral</option>
+            <option value="aniversario">Aniversário</option>
+            <option value="familia">Família</option>
+        </select>
+    
+    
+        <!--valor-->
+        <label for="valor">Valor:</label>
+        <input type="number" name="valor" id="valor" placeholder="100">
+    
+    
+        <!--codigo do presente-->
+        <label for="codigo">Gl - </label>
+        <input type="text" name="codigo" id="codigo">
+
+        <button type="submit" onclick="gerar()">Enviar</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
