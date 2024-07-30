@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="age" placeholder="Age">
+    <input type="text" id="value" placeholder="Value">
+    <button onclick="insertText()">Create and Download Image</button>
+    <canvas id="myCanvas" style="display:none;"></canvas>
+    <img id="resultImage" style="display:none;" />
+
+    <script>
+        function insertText() {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const value = document.getElementById('value').value;
+            const canvas = document.getElementById('myCanvas');
+            const ctx = canvas.getContext('2d');
+
+            const img = new Image();
+            img.src = 'vale.jpg';
+
+            img.onload = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                canvas.width = img.width;
+                canvas.height = img.height;
+
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                ctx.font = '40px Arial';
+                ctx.fillStyle = 'black';
+                ctx.textAlign = 'left';
+
+                ctx.fillText(`Nome: ${name}`, 220, 250);
+                ctx.fillText(`Idade: ${age}`, 220, 300);
+                ctx.fillText(`Valor: ${value}`, 220, 350);
+
+                const dataURL = canvas.toDataURL('image/png');
+                const resultImage = document.getElementById('resultImage');
+                resultImage.src = dataURL;
+                resultImage.style.display = 'block';
+
+                const link = document.createElement('a');
+                link.href = dataURL;
+                link.download = `${name}-${age}-${value}.png`; 
+                link.click(); 
+            };
+        }
+    </script>
+</body>
+</html>
