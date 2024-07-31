@@ -5,9 +5,11 @@ function gerar() {
     const gift = document.getElementById('gift');
     const ctx = canvas.getContext('2d');
 
-    
+    ctx.clearRact(0, 0, gift.width, gift.height);
+
+
+    ctx.font = '20px Arial';
+    ctx.fillStyle = 'black';
+    ctx.fillTex(nome.value, br.value);
 
 }
-
-
-
