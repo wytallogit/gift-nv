@@ -7,16 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body onload="carregar()">
-    <form action="">
+    <form action=""> <!--formulario-->
 
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome" placeholder="Ana Maria da Silva">
     
+        <!--nome do participante-->
         <label for="br">BR:</label>
         <input type="number" name="br" id="br" placeholder="055500123">
+
+        <!--faixa etaria do participante-->
+        <label for="faixa-etaria">Faixa-etaria</label>
+        <select name="faixa-etaria" id="faixa-etaria">
+            <option value="" disabled selected></option>
+            <option value="6-8">6-8</option>
+            <option value="9-11">9-11</option>
+            <option value="12-14">12-14</option>
+            <option value="15-18">15-18</option>
+            <option value="19+">19+</option>
+        </select>
     
+        <!--tipo de presente-->
         <label for="tipo-presente">Tipo de presente:</label>
         <select name="tipo-presente" id="tipo-presente">
+            <option value="" disabled selected></option>
             <option value="geral">Geral</option>
             <option value="aniversario">Aniversário</option>
             <option value="familia">Família</option>
@@ -32,13 +46,15 @@
         <label for="codigo">Gl - </label>
         <input type="text" name="codigo" id="codigo">
 
-        <button type="submit" onclick="gerar()">Enviar</button>
-    </form>
+        <button onclick="draw()">Criar</button>
+    </form><br>
 
-    <canvas id="gift" width="400px" height="200px">
+    <canvas id="canvas" width="500" height="250">
         <h1>Erro [404]</h1>
         <p>Seu navegador não suporta esse recurso de canvas.</p>
-    </canvas>
+    </canvas><br>
+
+    <input type="button" onclick="downloadImage()" value="Download">
 
     <script src="script.js"></script>
 </body>
