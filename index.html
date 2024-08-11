@@ -6,48 +6,47 @@
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="carregar()">
-    <form action=""> <!--formulario-->
+<body>
 
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" placeholder="Ana Maria da Silva">
-    
-        <!--nome do participante-->
-        <label for="br">BR:</label>
-        <input type="number" name="br" id="br" placeholder="055500123">
+    <!--nome do participante-->
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" id="nome" placeholder="Ana Maria da Silva">
 
-        <!--faixa etaria do participante-->
-        <label for="faixa-etaria">Faixa-etaria</label>
-        <select name="faixa-etaria" id="faixa-etaria">
-            <option value="" disabled selected></option>
-            <option value="6-8">6-8</option>
-            <option value="9-11">9-11</option>
-            <option value="12-14">12-14</option>
-            <option value="15-18">15-18</option>
-            <option value="19+">19+</option>
-        </select>
-    
-        <!--tipo de presente-->
-        <label for="tipo-presente">Tipo de presente:</label>
-        <select name="tipo-presente" id="tipo-presente">
-            <option value="" disabled selected></option>
-            <option value="geral">Geral</option>
-            <option value="aniversario">Aniversário</option>
-            <option value="familia">Família</option>
-        </select>
-    
-    
-        <!--valor-->
-        <label for="valor">Valor:</label>
-        <input type="number" name="valor" id="valor" placeholder="100">
-    
-    
-        <!--codigo do presente-->
-        <label for="codigo">Gl - </label>
-        <input type="text" name="codigo" id="codigo">
+    <!--matricula do participante-->
+    <label for="br">BR:</label>
+    <input type="number" name="br" id="br" placeholder="055500123">
 
-        <button onclick="draw()">Criar</button>
-    </form><br>
+    <!--faixa etaria do participante-->
+    <label for="faixa-etaria">Faixa-etaria</label>
+    <select name="faixa-etaria" id="faixa-etaria">
+        <option value="" disabled selected></option>
+        <option value="6-8">6-8</option>
+        <option value="9-11">9-11</option>
+        <option value="12-14">12-14</option>
+        <option value="15-18">15-18</option>
+        <option value="19+">19+</option>
+    </select>
+
+    <!--tipo de presente-->
+    <label for="tipo-presente">Tipo de presente:</label>
+    <select name="tipo-presente" id="tipo-presente">
+        <option value="" disabled selected></option>
+        <option value="geral">Geral</option>
+        <option value="aniversario">Aniversário</option>
+        <option value="familia">Família</option>
+    </select>
+
+
+    <!--valor-->
+    <label for="valor">Valor:</label>
+    <input type="number" name="valor" id="valor" placeholder="100">
+
+
+    <!--codigo do presente-->
+    <label for="codigo">Gl - </label>
+    <input type="text" name="codigo" id="codigo">
+
+    <button onclick="draw()">Criar</button><br>
 
     <canvas id="canvas" width="500" height="250">
         <h1>Erro [404]</h1>
