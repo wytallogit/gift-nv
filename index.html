@@ -9,46 +9,57 @@
 <body>
     <main>
         <img src="imagens/Logo 1.png" alt="">
-        <!--nome do participante-->
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" placeholder="Ana Maria da Silva">
-    
-        <!--matricula do participante-->
-        <label for="br">BR:</label>
-        <input type="number" name="br" id="br" placeholder="555">
-    
-        <!--faixa etaria do participante-->
-        <label for="faixa-etaria">Faixa-etaria</label>
-        <select name="faixa-etaria" id="faixa-etaria">
-            <option value="" disabled selected></option>
-            <option value="6-8">6-8</option>
-            <option value="9-11">9-11</option>
-            <option value="12-14">12-14</option>
-            <option value="15-18">15-18</option>
-            <option value="19+">19+</option>
-        </select>
-    
-    
-        <!--tipo de presente-->
-        <label for="tipo-presente">Tipo de presente:</label>
-        <select name="tipo-presente" id="tipo-presente">
-            <option value="" disabled selected></option>
-            <option value="Geral">Geral</option>
-            <option value="Aniversario">Aniversário</option>
-            <option value="Familia">Família</option>
-        </select>
-    
-    
-        <!--valor-->
-        <label for="valor">Valor:</label>
-        <input type="number" name="valor" id="valor" placeholder="100">
-    
-    
-        <!--codigo do presente-->
-        <label for="codigo">Gl - </label>
-        <input type="text" name="codigo" id="codigo">
+
+        <div id="flexCaixa">            
+            <!--nome do participante-->
+            <div class="flexInput">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="Ana Maria da Silva">
+            </div>
+            <div class="flexInput">
+                <!--matricula do participante-->
+                <label for="br">BR:</label>
+                <input type="number" name="br" id="br" placeholder="555"><br>
+            </div>
+            <div class="flexInput">
+                <!--faixa etaria do participante-->
+                <label for="faixa-etaria">Faixa-etaria</label>
+                <select name="faixa-etaria" id="faixa-etaria">
+                    <option value="" disabled selected></option>
+                    <option value="6-8">6-8</option>
+                    <option value="9-11">9-11</option>
+                    <option value="12-14">12-14</option>
+                    <option value="15-18">15-18</option>
+                    <option value="19+">19+</option>
+                </select>
+            </div>
+            <div class="flexInput">
+                <!--tipo de presente-->
+                <label for="tipo-presente">Tipo de presente:</label>
+                <select name="tipo-presente" id="tipo-presente">
+                    <option value="" disabled selected></option>
+                    <option value="Geral">Geral</option>
+                    <option value="Aniversario">Aniversário</option>
+                    <option value="Familia">Família</option>
+                </select>
+            </div>
+            <div class="flexInput">
+                <!--valor-->
+                <label for="valor">Valor:</label>
+                <input type="number" name="valor" id="valor" placeholder="100">
+            </div>
+            <div class="flexInput">
+                <!--codigo do presente-->
+                <label for="codigo">Gl - </label>
+                <input type="text" name="codigo" id="codigo">
+            </div>
+        </div>
     
         <button onclick="draw()">Criar</button><br>
+        <div id="botoes">
+            <input class="addDownload" type="button" onclick="addImage()" value="Adicionar">
+            <input class="addDownload" type="button" onclick="downloadImage()" value="Download">
+        </div>
     </main>
 
 
@@ -57,7 +68,6 @@
         <p>Seu navegador não suporta esse recurso de canvas.</p>
     </canvas><br>
 
-    <input type="button" onclick="downloadImage()" value="Download">
 
     <script src="script.js"></script>
 </body>

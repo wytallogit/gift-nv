@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
     --branco: #F2F2F2;
     --verde: #00A14B;
@@ -6,12 +8,14 @@
 
 body {
     background-color: var(--verde);
+    font-family: "Poppins", sans-serif;
 }
 
 #canvas {
     border: 1px solid;
-    background: url('imagens/Frame\ 1.png') no-repeat center, linear-gradient(to right, #78ffd6, #a8ff78);
+    background: url('imagens/Frame\ 1.png') no-repeat center;
     display: none;
+    margin: auto;
 }
 
 main {
@@ -20,6 +24,7 @@ main {
     margin: 50px auto;
     padding: 20px 20px 1px 20px;
     border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.333);
 }
 
 img {
@@ -33,8 +38,30 @@ button {
     background-color: var(--azul);
     border: none;
     color: var(--branco);
-    padding: 20px;
+    padding: 15px 20px;
     border-radius: 10px;
-    margin: 30px auto;
+    margin: 30px auto 0;
     display: block;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.333);
+}
+
+#botoes {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.addDownload {
+    background-color: var(--verde);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: var(--branco);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.333);
+}
+
+#flexCaixa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
 }
