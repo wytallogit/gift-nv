@@ -1,3 +1,5 @@
+let c = 0;
+
 function draw() {
     const nome = document.getElementById('nome').value;
     const br = document.getElementById('br').value;
@@ -56,13 +58,47 @@ function draw() {
 
 }
 
-function downloadImage() {
-    const canvas = document.getElementById('canvas');
-    const image = canvas.toDataURL('image/png'); // Corrigido para 'image/png'
 
-    const link = document.createElement('a');
-    link.href = image;
-    link.download = 'gift.png';
+function addImage() {
+    const gallery = document.getElementById('gallery');
 
-    link.click();
+    let dataURL = canvas.toDataURL('image/png');
+
+    let img = document.createElement('img');
+    img.src = dataURL;
+    img.style.width = '200px'
+
+    gallery.appendChild(img);
+
+    c++;
+
 }
+
+function downloadImage() {
+    let imgs = gallery.getElementsByTagName('img');
+
+    let zip = new JSZip();
+    let pasta = zip.folder('gift');
+
+    for(let i = 0; i < imgs.length; i++) {
+        let imgData = imgs[1].src.replace(/^data:image\/(png|jpg);base64,/, "");
+        pasta.file(`giftBR${br.value}.jpg`, imgData, {base64: true});
+    }
+
+    zip.generateAsync({type:'blob'}).then(function(content){
+        let link = document.createElement('a');
+        link.href = URL.createObjectURL(content);
+        let data = new Date()
+        let meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+        let mes = meses[data.getMonth()];
+        link.download = `gifts-${mes}.zip`;
+
+        link.click();
+    });
+};
+
+function viewFolder() {
+    gallery.style.display = 'flex';
+}
+
+window.onload = draw;

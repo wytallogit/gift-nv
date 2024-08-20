@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
 </head>
 <body>
     <main>
@@ -12,16 +13,16 @@
 
         <div id="flexCaixa">            
             <!--nome do participante-->
-            <div class="flexInput">
+            <div>
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome" placeholder="Ana Maria da Silva">
             </div>
-            <div class="flexInput">
+            <div>
                 <!--matricula do participante-->
                 <label for="br">BR:</label>
                 <input type="number" name="br" id="br" placeholder="555" maxlength="3" min="1" max="360"><br>
             </div>
-            <div class="flexInput">
+            <div>
                 <!--faixa etaria do participante-->
                 <label for="faixa-etaria">Faixa-etaria</label>
                 <select name="faixa-etaria" id="faixa-etaria">
@@ -33,7 +34,7 @@
                     <option value="19+">19+</option>
                 </select>
             </div>
-            <div class="flexInput">
+            <div>
                 <!--tipo de presente-->
                 <label for="tipo-presente">Tipo de presente:</label>
                 <select name="tipo-presente" id="tipo-presente">
@@ -43,20 +44,21 @@
                     <option value="Familia">Família</option>
                 </select>
             </div>
-            <div class="flexInput">
+            <div>
                 <!--valor-->
                 <label for="valor">Valor:</label>
                 <input type="number" name="valor" id="valor" placeholder="100">
             </div>
-            <div class="flexInput">
+            <div>
                 <!--codigo do presente-->
                 <label for="codigo">Gl - </label>
-                <input type="text" name="codigo" id="codigo">
+                <input type="text" name="codigo" id="codigo" placeholder="12345678">
             </div>
         </div>
     
         <button onclick="draw()">Criar</button><br>
         <div id="botoes">
+            <button id="conteudo" onclick="viewFolder()"><img src="imagens/present.png" alt=""></button>
             <input class="addDownload" type="button" onclick="addImage()" value="Adicionar">
             <input class="addDownload" type="button" onclick="downloadImage()" value="Download">
         </div>
@@ -67,6 +69,8 @@
         <h1>Erro [404]</h1>
         <p>Seu navegador não suporta esse recurso de canvas.</p>
     </canvas><br>
+
+    <div id="gallery"></div>
 
 
     <script src="script.js"></script>
